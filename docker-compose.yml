@@ -6,12 +6,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./app:/app
-      - /app/node_modules
+      - ./pages:/pages
+      - /pages/node_modules
     depends_on:
       - postgres
     environment:
       - DATABASE_URL=postgres://user:password@postgres:5432/mydatabase
+      - NODE_ENV=development
     command: "npm run dev"
 
   postgres:
