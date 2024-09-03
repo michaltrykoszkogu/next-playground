@@ -1,3 +1,5 @@
 {
-  "hello": "Hello World"
+  "hello": "Hello World",
+  "about": "About Us",
+  "home": "Home"
 }
