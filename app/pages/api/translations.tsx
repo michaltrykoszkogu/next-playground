@@ -1,16 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import fs from 'fs';
-import path from 'path';
-
-const loadTranslationFile = (locale: string, namespace: string) => {
-    const filePath = path.resolve(process.cwd(), `public/locales/${locale}/${namespace}.json`);
-    if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(fileContent);
-    } else {
-        return null;
-    }
-};
+import loadTranslationFile from "../../helpers/loadTranslationFile";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const {locale, namespace} = req.query;
