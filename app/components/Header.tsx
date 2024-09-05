@@ -12,6 +12,7 @@ type MenuItem = {
 const menuItems: MenuItem[] = [
     {key: "home", href: "/"},
     {key: "about", href: "/about"},
+    {key: "Login", href: "/api/auth/signin"},
 ];
 
 export const Header = () => {
@@ -34,7 +35,7 @@ export const Header = () => {
                 </ul>
             </nav>
             {session && (
-                <p>Logged in: {session.user.email}</p>
+                <p>Logged in: {session?.user?.email}</p>
             )}
             <p></p>
             <LanguageSwitcher/>
