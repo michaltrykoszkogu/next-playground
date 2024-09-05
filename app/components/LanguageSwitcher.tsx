@@ -1,6 +1,6 @@
-import {LocalStorageKeysEnum} from "@/enums/local-storage-keys.enum";
-import {LanguagesEnum} from "@/enums/languages.enum";
 import {useEffect, useState} from "react";
+import {LocalStorageKeysEnum} from "../enums/local-storage-keys.enum";
+import {LanguagesEnum} from "../enums/languages.enum";
 
 export const LanguageSwitcher = () => {
     const [currentLang, setCurrentLang] = useState<LanguagesEnum>();

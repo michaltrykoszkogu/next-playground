@@ -1,7 +1,8 @@
 import Link from "next/link";
-import {LanguageSwitcher} from "@/components/LanguageSwitcher";
-import {useTranslation} from "@/hooks/useTranslation";
-import {useCurrentPage} from "@/hooks/useCurrentPage";
+import {LanguageSwitcher} from "../components/LanguageSwitcher";
+import {useTranslation} from "../hooks/useTranslation";
+import {useCurrentPage} from "../hooks/useCurrentPage";
+import {useSession} from "next-auth/react";
 
 type MenuItem = {
     key: string;
@@ -16,6 +17,7 @@ const menuItems: MenuItem[] = [
 export const Header = () => {
     const {t} = useTranslation("common");
     const currentPage = useCurrentPage();
+    const {data: session} = useSession();
 
     return (
         <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
@@ -31,6 +33,10 @@ export const Header = () => {
                     ))}
                 </ul>
             </nav>
+            {session && (
+                <p>Logged in: {session.user.email}</p>
+            )}
+            <p></p>
             <LanguageSwitcher/>
         </header>
     )

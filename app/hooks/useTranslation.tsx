@@ -1,7 +1,7 @@
 import {useTranslation as useI18next} from 'react-i18next';
 import {useEffect, useState} from 'react';
-import {LocalStorageKeysEnum} from "@/enums/local-storage-keys.enum";
-import {LanguagesEnum} from "@/enums/languages.enum";
+import {LocalStorageKeysEnum} from "../enums/local-storage-keys.enum";
+import {LanguagesEnum} from "../enums/languages.enum";
 
 type Translations = {
     [key: string]: string;
